@@ -45,4 +45,4 @@ export * as hd from "@ckb-lumos/hd";
 export { CellCollector, Indexer } from "@ckb-lumos/ckb-indexer";
 export * as helpers from "@ckb-lumos/helpers";
 export * as commons from "@ckb-lumos/common-scripts";
-export { BI } from "@ckb-lumos/bi";
+export { BI, parseUnit, formatUnit } from "@ckb-lumos/bi";
