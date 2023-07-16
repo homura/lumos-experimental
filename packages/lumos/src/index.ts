@@ -37,7 +37,7 @@ export type {
   PackedSince,
 } from "@ckb-lumos/base/lib/primitive";
 
-export { since, utils } from "@ckb-lumos/base";
+export { since, utils, blockchain } from "@ckb-lumos/base";
 export * as config from "@ckb-lumos/config-manager";
 
 export { RPC } from "@ckb-lumos/rpc";
