@@ -29,3 +29,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # TODO remove me when ready
+      - name: Check
+        run: |
+          npm view @ckb-lumos/lumos
