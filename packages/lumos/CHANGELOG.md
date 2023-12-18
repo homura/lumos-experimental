@@ -1,5 +1,11 @@
 # @ckb-lumos/lumos
 
+## 0.22.0-next.1
+
+### Minor Changes
+
+- [#588](https://github.com/ckb-js/lumos/pull/588) [`3521682`](https://github.com/ckb-js/lumos/commit/35216825703386db99a86857861ba80d71c46569) Thanks [@homura](https://github.com/homura)! - refactor: refine the export structure
+
 ## 0.22.0-next.0
 
 ## 0.21.1
