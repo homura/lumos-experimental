@@ -27,6 +27,13 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install-deps
 
+      # TODO remove me when ready
+      - name: Release to Verdaccio
+        run: |
+          npm install -g verdaccio
+          npm config set registry http://localhost:4873
+          nohup verdaccio --config ./devtools/verdaccio.yaml --listen=4873 >/dev/null 2>&1 &
+
       - name: Publish to NPM
         id: changesets
         uses: changesets/action@v1
@@ -41,6 +48,17 @@ jobs:
 
       - uses: 8BitJonny/gh-get-current-pr@2.2.0
         id: PR
+
+      # TODO remove me when ready, just for debugging
+      - name: Debug
+        run: |
+          echo "pr_found: ${{ steps.PR.outputs.pr_found }}"
+          echo "pr_found_is_true: ${{ steps.PR.outputs.pr_found == 'true' }}"
+          echo "pr_merged_at: ${{ steps.PR.outputs.pr_merged_at }}"
+          echo "pr_merged_at_contains_dash: ${{ contains(steps.PR.outputs.pr_merged_at, '-') }}"
+          echo "pr_title: ${{ steps.PR.outputs.pr_title }}"
+          echo "pr_title_contains_version_packages: ${{ contains(steps.PR.outputs.pr_title, 'Version Packages') }}"
+          echo "changesets outputs: ${{ steps.changesets.outputs.published }}"
 
       - name: Setup publish env
         run: |
